@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Methods - IOT Final Website">
+    <section id="sketch" class="mt-10">
+        <h2 class="text-4xl font-extrabold dark:text-white">System Sketch</h2>
+        <p class="my-4 text-lg text-gray-500 text-justify">The project hardware is based on a Raspberry PI. It uses the GPIO pins to communicate with the sensors. In this example, an AM2320 and a TMP36 are connected but it can easily be adapted to other
+            sensors.</p>
+        <p class="mb-4 text-lg text-gray-500 text-justify">In addition, an LED and a button are connected to the Raspberry PI to manage alarm. When one is raised, the LED is turned on and when the button is pressed, the alarm is reset.</p>
+        <div class="flex flex-col items-center">
+            <figure class="max-w-2xl">
+                <img class="h-auto max-w-full" src="/img/sketch.png" alt="System sketch">
+                <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">System sketch</figcaption>
+            </figure>
+        </div>
+    </section>
+    <section id="structure" class="mt-10">
+        <h2 class="text-4xl font-extrabold dark:text-white">Services Structure</h2>
+        <p class="my-4 text-lg text-gray-500 text-justify">In this project, multiple services are interconnected. While the core of the project runs on a Raspberry Pi 4 through a Python script, the data and alarms are sent to other services for analysis.</p>
+        <p class="mb-4 text-lg text-gray-500 text-justify">All sensors value and triggered alarms are stored in a Mongo database to keep an historical record and every 15s, the data are sent to ThingSpeak for MATLAB analysis. For real-time processing, the data are sent to an MQTT broker, allowing multiple services to subscribe to data of interest with low latency. A data analysis python script can be used to process data from MQTT (real time) or the Mongo database. </p>
+        <div class="flex flex-col items-center">
+            <figure class="max-w-2xl">
+                <img class="h-auto max-w-full" src="/img/services.png" alt="Services Structure">
+                <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Services structure</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <div class="flex justify-center pt-16">
+        <a href="/"
+           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+            </svg>
+            Previous: Introduction
+        </a>
+        <a href="/results"
+           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Next: Results
+            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+</Layout>

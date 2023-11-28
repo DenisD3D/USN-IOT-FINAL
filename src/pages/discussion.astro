@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {Code} from 'astro:components';
+---
+
+<Layout title="Discussion - IOT Final Website">
+    <section id="discussion" class="mt-10">
+        <h2 class="text-4xl font-extrabold dark:text-white">Discussion</h2>
+        <p class="my-4 text-lg text-gray-500 text-justify">To ensure security of the data, all services are password or API key protected, making it impossible to access the transiting data without knowing the logins. The python script searches for
+            the secrets in the environment variable so that they are not saved in the source code. Thanks to the python-dotenv library, the variables from the .env file are added to the environment variable giving two ways of providing secrets in
+            production or development. The .env file is present in the .gitignore so it’s not committed to version control software and the file .env.example file can be renamed and filled in to configure secrets. This means that the only way to
+            access these secrets is through physical access to the Raspberry Pi as the SD card can easily be read by a computer to access data inside.</p>
+        <div class="grid grid-cols-1 justify-items-center">
+            <div class="prose mx-auto bg-gray-100 w-full">
+                <Code code={`MANGODB_USERNAME=
+MANGODB_PASSWORD=
+THINGSPEAK_API_KEY=
+MQTT_BROKER_URL=
+MQTT_BROKER_PORT=
+MQTT_USERNAME=
+MQTT_PASSWORD=
+FAKE_SENSORS=False`} lang="ini"/>
+            </div>
+            <div class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">.env.example file to be filled in <a href="https://github.com/DenisD3D/USN-IOT-LAB2/blob/main/.env.example" class="underline"><code>.env.example</code></a></div>
+        </div>
+    </section>
+
+    <div class="flex justify-center pt-16">
+        <a href="/results"
+           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+            </svg>
+            Previous: Results
+        </a>
+        <a href="/conclusion"
+           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Next: Conclusion
+            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+</Layout>
