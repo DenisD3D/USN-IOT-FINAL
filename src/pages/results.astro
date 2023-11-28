@@ -95,7 +95,7 @@ SENSORS = {
     <section id="loop" class="mt-10">
         <h2 class="text-4xl font-extrabold dark:text-white">Main loop</h2>
         <p class="my-4 text-lg text-gray-500 text-justify">The main loop of the program is responsible for reading all sensors values, then it uploads sensors values to MongoDB and ThingSpeak. It also publishes sensors values to MQTT and finally,
-            check for new alarms triggered. If a new alarm is triggered, the LED is light up, the alarm is uploaded to mongo DB and published to MQTT.</p>
+            check for new alarms triggered. If a new alarm is triggered, the LED is light up, the alarm is uploaded to MongoDB and published to MQTT.</p>
         <div class="grid grid-cols-1 justify-items-center">
             <div class="prose mx-auto bg-gray-100 w-full">
                 <Code code={`while is_running:
@@ -221,7 +221,7 @@ SENSORS = {
         </div>
         <p class="my-4 text-lg text-gray-500 text-justify">The data uploaded to MongoDB have the following structure. All objects have an id automatically added by MongoDB. In addition, the sensors value upload contains one field per sensor and a
             timestamp field that refers to the instant the data was collected. Due to the NoSQL nature of MongoDB, the addition of a new sensor will work flawlessly as new objects will simply have an additional field. The alarm object contains, the
-            sensors that triggered the alarm, the id of the object containing the values that triggered the alarm and the timestamp at which the alarm was triggered. The ended at field stay null as long as the alarm haven’t been acknowledged. Then
+            sensors that triggered the alarm, the id of the object containing the values that triggered the alarm and the timestamp at which the alarm was triggered. The ended at field stay null as long as the alarm isn’t been acknowledged. Then
             the value is updated to the timestamp it was acknowledged.</p>
         <div class="flex flex-col items-center">
             <figure class="max-w-2xl">
@@ -234,7 +234,7 @@ SENSORS = {
         <h2 class="text-4xl font-extrabold dark:text-white">ThingSpeak Class</h2>
         <p class="my-4 text-lg text-gray-500 text-justify">All ThingSpeak related code is managed by the ThingSpeak class. It uses the rest API to upload the data, with one field per sensor value. The file can also be run as a standalone example
             script that upload dummy data.</p>
-        <p class="my-4 text-lg text-gray-500 text-justify">ThingSpeak website provide a quick and easy way to view data in the form of a graph without installing any tool. The data can also be exported to MatLab really quickly. </p>
+        <p class="my-4 text-lg text-gray-500 text-justify">ThingSpeak website provides a quick and easy way to view data in the form of a graph without installing any tool. The data can also be exported to MatLab really quickly. </p>
         <div class="grid grid-cols-1 justify-items-center">
             <div class="prose mx-auto bg-gray-100 w-full">
                 <Code code={`class ThingSpeak:
@@ -353,7 +353,7 @@ if __name__ == '__main__':
             <div class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Data analysis using MQTT in <a href="https://github.com/DenisD3D/USN-IOT-LAB2/blob/main/data_analysis_mqtt.py" class="underline"><code>data_analysis_mqtt.py</code></a>
             </div>
         </div>
-        <p class="my-4 text-lg text-gray-500 text-justify">The same script is available for the MongoDB data. It create a similar graph, this time using the data saved in the database and can be found as <a
+        <p class="my-4 text-lg text-gray-500 text-justify">The same script is available for the MongoDB data. It creates a similar graph, this time using the data saved in the database and can be found as <a
                 href="https://github.com/DenisD3D/USN-IOT-LAB2/blob/main/data_analysis_mongodb.py" class="underline"><code>data_analysis_mongodb.py</code></a></p>
         <p class="my-4 text-lg text-gray-500 text-justify">The following video show the MQTT data analysis script in action:</p>
         <div class="flex flex-col items-center">
