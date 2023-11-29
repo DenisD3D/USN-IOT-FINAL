@@ -275,9 +275,9 @@ SENSORS = {
             </div>
             <div class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">MQTT class in <a href="https://github.com/DenisD3D/USN-IOT-LAB2/blob/main/mqtt.py" class="underline"><code>mqtt.py</code></a></div>
         </div>
-        <p class="my-4 text-lg text-gray-500 text-justify">The topics used are in the form <code class="whitespace-nowrap font-bold" is:raw>IOT2/{sensor_name} -> sensor_value</code> for publishing sensors values, <code
-                class="whitespace-nowrap font-bold" is:raw>IOT2/alarm -> triggering_sensor_name</code> for publishing
-            alarm and <code class="whitespace-nowrap font-bold" is:raw>IOT2/alarm_ack -> none</code> for acknowledging all past alarms.</p>
+        <p class="my-4 text-lg text-gray-500 text-justify">The topics used are in the form <code class="font-bold" is:raw>IOT2/{sensor_name} -> sensor_value</code> for publishing sensors values, <code
+                class="font-bold" is:raw>IOT2/alarm -> triggering_sensor_name</code> for publishing
+            alarm and <code class="font-bold" is:raw>IOT2/alarm_ack -> none</code> for acknowledging all past alarms.</p>
     </section>
     <section id="analysis" class="mt-10">
         <h2 class="text-4xl font-extrabold dark:text-white">Data Analysis</h2>
@@ -357,8 +357,7 @@ if __name__ == '__main__':
                 href="https://github.com/DenisD3D/USN-IOT-LAB2/blob/main/data_analysis_mongodb.py" class="underline"><code>data_analysis_mongodb.py</code></a></p>
         <p class="my-4 text-lg text-gray-500 text-justify">The following video show the MQTT data analysis script in action:</p>
         <div class="flex flex-col items-center">
-            <iframe src="https://usn.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e8f86a5-d96c-489b-b036-b0c801431f6c&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720"
-                    style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+            <iframe src="https://usn.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e8f86a5-d96c-489b-b036-b0c801431f6c&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" class="shadow" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
         </div>
     </section>
 
